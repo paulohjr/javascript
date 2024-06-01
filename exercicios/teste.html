@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Codigo em Java</title>
+</head>
+<body>
+    <h1>Codigo em Java</h1>
+    <div id="res"></div>
+    <script>
+        var n1 = Number(window.prompt("Digite um numero"))
+        var n2 = Number(window.prompt("Digite outro numero"))
+        var adi = n1 + n2
+        var sub = n1 - n2
+        var mult = n1 * n2
+        var div = n1 / n2
+        var res = window.document.getElementById('res')
+
+        res.innerHTML = (`<p>A soma dos numero <strong> ${n1} + ${n2} </strong> é = <strong> ${adi}</strong> </p>
+        <p>A subtração dos numero <strong> ${n1} - ${n2} </strong> é = <strong> ${sub}</strong> </p>
+        <p>A multiplicação dos numero <strong> ${n1} x ${n2} </strong> é = <strong> ${mult}</strong> </p>
+        <p>A divisão dos numero <strong> ${n1} / ${n2} </strong> é = <strong> ${div}</strong> </p>`)
+        
+    </script>
+</body>
+</html>

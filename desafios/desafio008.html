@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do desconto</title>
+    <style>
+        input{
+            width: 130px;
+            height: 80px;
+            font-size: 1.3em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <input type="button" value="Calcular" onclick="desconto()">
+    <p id="p">Clique no botão acima para iniciar.</p>
+    <div id="res"></div>
+    <script>
+        function desconto(){
+            var nome = window.prompt(`Qual produto você vai comprar`)
+            var valor = Number(window.prompt(`Qual o valor do ${nome} que você esta comprando`))
+            var p = window.document.getElementById('p')
+            var res = window.document.getElementById('res')
+            var desc = (valor / 100) * (10)
+            var resultado = (valor) - (desc) 
+            
+            valor = valor.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+            desc = desc.toLocaleString('pt-BR',{style:'currency', currency:'BRL'})
+            resultado = resultado.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+            
+            p.style.fontSize = '2em'
+            res.style.lineHeight= '25px'
+            p.innerHTML = (`<strong> Calculando o desconto de 10% para o ${nome} <strong> `)
+            res.innerHTML = (`O Preço original era ${valor}<br>
+            Você acaba de ganhar ${desc} de deconto (-10%)<br>
+            No fim, você vai pagar ${resultado} no produto ${nome}`)    
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertendo medidas</title>
+    <style>
+        input{
+            width: 150px;
+            height: 80px;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Converson de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="medida()">
+    <p id="p">Clique no botão acima para iniciar.</p>
+    <div id="res"> </div>
+    <script>
+        function medida(){
+        var c = Number(window.prompt('Digite uma temperatura em ºC (Celcius)'))
+        var f = Number((c * 1.8) + 32) 
+        var k = Number(c + 273.15)
+        
+        var p = window.document.getElementById('p')
+        var res = window.document.getElementById('res')
+        p.style.fontSize = '2em'
+        res.style.lineHeight = '25px'
+        p.innerHTML = (`<strong>A Temperatura de ${c}ºC, corresponde a...</strong>`)
+        res.innerHTML = (`${f} ºF (Fahrenheit) <br>
+                        ${k} ºK (Kelvin)`)
+    
+}
+    </script>
+</body>
+</html>

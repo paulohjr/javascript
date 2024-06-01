@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do Troco</title>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <input type="button" value="Comprar Produto" id="produto" onclick="troco()">
+    <script>
+        function troco(){
+            var prod = window.prompt('Qual produto você esta comprando?')
+            var valor = Number(window.prompt(`Quanto custo o ${prod} que você esta comprando`))
+            var pago = Number(window.prompt(`Qual valor você deu para pagar o ${prod}?`))
+            var soma = pago - valor
+            var a = valor.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+            var b = pago.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+            var somas = soma.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})
+            
+            window.alert(`Você comprou o ${prod} que custou ${a}.
+Deu ${b} em dinheiro e vai receber ${somas} de troco.
+Volte Sempre`)
+        }
+    </script>
+</body>
+</html>

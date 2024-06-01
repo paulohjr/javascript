@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Bhaskara</title>
+    <style>
+        input{
+            width: 150px;
+            height: 70px;
+            font-size: 1.4em;
+            font-weight: bolder;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="calc()">
+    <p id="p">Considerando uma equação no formato <span>ax² + bx + c = 0</span>, aperte o botão acima para calcular o valor de Δ</p>
+    <div id="res"></div>
+    <script>
+        function calc(){
+            var a = window.prompt("Digite o valor de 'a' ?")
+            var b = window.prompt("Digite o valor de 'b' ?")
+            var c = window.prompt("Digite o valor de 'c' ?")
+
+            var p = window.document.getElementById('p')
+            var res = window.document.getElementById('res')
+            var soma = (b**2) - (4 * a * c) 
+
+            p.style.lineHeight = "25px"
+            p.innerHTML = (`A equação atual é <strong> ${a}x² + ${b}x + ${c} = 0</strong> <br>
+            O Cálculo realizado sera <strong> Δ = ${b}² - 4 . ${a} . ${c} </strong> <br>
+            O Valor calculado foi <strong> Δ = ${soma} </strong>`)
+        }
+    </script>
+</body>
+</html>

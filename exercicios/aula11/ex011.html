@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual pais é o seu?</title>
+</head>
+<body>
+    <h1>Você é estrangeiro</h1>
+    Qual seu pais: <input type="text" name="txtvel" id="txtvel">
+    <input type="submit" value="Enviar" onclick="vel()" >
+    <div id="res"></div>
+    <script>
+    function vel(){
+        var pais = window.document.getElementById('txtvel')
+        var res = window.document.getElementById ('res')
+        res.innerHTML = (`<p>Seu pais é <strong>${pais.value}</strong> </p>`)
+        if (pais.value == 'Brasil' || pais.value =='br' || pais.value =='brasil')  { 
+            res.innerHTML += (`<p> Você é Brasileiro </p>`)
+        } else { 
+             res.innerHTML += (` <p> Você é Estrangeiro </p>`)
+        }
+    }
+    </script>
+</body>
+</html>

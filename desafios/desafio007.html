@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotação do Dolar</title>
+    <style>
+        input{
+            width: 130px;
+            height: 80px;
+            font-size: 1.4em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ → US$</h1>
+    <input type="button" value="Converter" onclick="real()">
+    <p id="p">Clique no botão acima para iniciar.</p>
+    <div id="res"></div>
+    <script>
+        function real(){
+            var cot = Number(window.prompt(`Digite a cotação atual do dolar`))
+            var real = Number(window.prompt(`Digite o valor em R$ que você tem na carteira`))
+            var soma = real / cot
+            var p = window.document.getElementById('p')
+            var res = window.document.getElementById('res')
+            soma = soma.toLocaleString('EN',{style:'currency',currency:'USD'})
+
+            p.style.fontSize = '2em'
+            p.innerHTML = (`<strong> O valor em dolar que você conseguirá comprar é </strong>`)
+            res.innerHTML = (`Você pode comprar ${soma}`)
+        }
+    </script>
+</body>
+</html>

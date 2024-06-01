@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidade do Carro</title>
+</head>
+<body>
+    <h1>Medidando velocidade do carro</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="submit" value="Enviar" onclick="vel()" >
+    <div id="res"></div>
+    <script>
+    function vel(){
+        var txtv = window.document.getElementById('txtvel')
+        var vel = Number(txtv.value)
+        var res = window.document.getElementById ('res')
+        
+        res.innerHTML = (`<p>Sua velocidade é de <strong>${vel} Km/h</strong> </p>`)
+        if (vel >= 61)
+        { 
+            res.innerHTML += (`<p> A velocidade de ${vel} Km/h esta acima do permitido, Você esta MULTADO! </p>`)
+        }
+         else { 
+            res.innerHTML += (` <p> A velocidade de ${vel} Km/h esta dentro ou abaixo da velocidade da pista, siga sua viagem!</p>`)
+        }
+        
+        res.innerHTML += (`Dirija sempre com sinto de segurança!`)
+        }
+    </script>
+</body>
+</html>
