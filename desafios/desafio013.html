@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de nota</title>
+    <style>
+        input{
+            width: 250px;
+            height: 70px;
+            font-size: 1.3em;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="joana()">
+    <p id="p">Clique no botão acima para informar as notas do aluno.</p>
+    <div id="res"></div>
+    <script>
+        function joana(){
+            var nome = window.prompt(`Digite o nome do aluno?`)
+            var nota1 = Number(window.prompt(`Digite a primeira nota?`))
+            var nota2 = Number(window.prompt(`Digite a segunda nota?`))
+            var soma = Number((nota1 + nota2) / 2)
+            var p = window.document.getElementById('p')
+            var rep = (`REPROVADO`).fontcolor('#8b0000')
+            var rec = (`RECUPERAÇÃO`).fontcolor('#ff8c00')
+            var aprov = (`APROVADO`).fontcolor('green')
+            p.style.fontSize= '2em'
+            var res = window.document.getElementById('res')
+            p.innerHTML = (`Analisando a situação de ${nome}`)
+            if (soma < 3) {
+                res.innerHTML += (`<p>Com as notas ${nota1} + ${nota2}, a <strong>média é ${soma}</strong></p>
+                Com média abaixo de 3,0. O aluno esta <strong>${rep} </strong>`)
+            } else if (soma >= 3 && soma <= 6){
+                res.innerHTML += (`<p>Com as notas ${nota1} + ${nota2}, a <strong>média é ${soma}</strong></p>
+                Com média entre 3,0 e 6,0. O aluno esta de <strong>${rec}</strong>`) 
+            } else {
+                res.innerHTML += (`<p>Com as notas ${nota1} + ${nota2}, a <strong>média é ${soma}</strong></p>
+                Com média acima de 6,0. O aluno esta <strong>${aprov}</strong>`)
+            }
+        }
+    </script>
+</body>
+</html>

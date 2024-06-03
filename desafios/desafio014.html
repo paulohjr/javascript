@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media de nota</title>
+    <style>
+        input#enviar{
+            width: 130px;
+            height: 50px;
+            font-size: 1.3em;
+            font-weight: bolder;
+        }
+        body{
+            line-height: 25px;
+        }
+        #enviar{
+            margin-top: 9px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <label>Qual nome do Aluno?</label>
+    <input type="text" name="nome" id="nome"><br>
+    
+    <label>Nota 1:</label>
+    <input type="number" name="nota1" id="nota1"> <br>
+    
+    <label>Nota 2:</label>
+    <input type="number" name="nota2" id="nota2" ><br>
+    
+    <input type="button" value="Enviar" id="enviar" onclick="joana()">
+    
+    <p id="p">Clique no botão acima para informar as notas do aluno.</p>
+    <div id="res"></div>
+    <script>
+        function joana(){
+            var nome = window.document.getElementById('nome')
+            var nota1 = Number(window.document.getElementById('nota1'))
+            var nota2 = Number(window.document.getElementById('nota2'))
+            var p = window.document.getElementById('p')
+            var res = window.document.getElementById('res')
+            var soma = nota1.value + nota2.value  
+            nota1 = nota1.value
+            var rep = (`REPROVADO`).fontcolor('#8b0000')
+            var rec = (`RECUPERAÇÃO`).fontcolor('#ff8c00')
+            var aprov = (`APROVADO`).fontcolor('green')
+            p.style.fontSize= '2em'
+            p.innerHTML = (`Analisando a situação de ${nome.value}`)
+            if (soma < 3) {
+            res.innerHTML += (`<p>Com as notas ${nota1.value} + ${nota2.value}, a <strong>média é ${soma}</strong></p>
+                Com média abaixo de 3,0. O aluno esta <strong>${rep} </strong>`)
+            } else if (soma >= 3 && soma <= 6){
+                res.innerHTML += (`<p>Com as notas ${nota1} + ${nota2}, a <strong>média é ${soma}</strong></p>
+                Com média entre 3,0 e 6,0. O aluno esta de <strong>${rec}</strong>`) 
+            } else {
+                res.innerHTML += (`<p>Com as notas ${nota1} + ${nota2}, a <strong>média é ${soma}</strong></p>
+                Com média acima de 6,0. O aluno esta <strong>${aprov}</strong>`)
+            }
+        }
+    </script>
+</body>
+</html>

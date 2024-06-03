@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do ano bissexto</title>
+</head>
+<body>
+    <h1>O ano é Bissexto?</h1>
+    <input type="number" name="date" id="idate">
+    <input type="button" value="Enviar" onclick="data()">
+    <div id="res"></div>
+    <script>
+        function data() {
+            var data = Number(window.document.getElementById('idate'))
+            var res = window.document.getElementById('res')
+            data = (idate.value)
+            if (data % 4 == 0 && data % 100 != 0 || data % 400 == 0){
+                res.innerHTML = (`<p>O Ano de ${data} é Bissexto</p>`)
+            } else {
+                res.innerHTML = (`<p>O Ano de ${data} não é Bissexto</p>`)
+                res.style.fontSize ='2em'
+            }
+            }    
+            
+    </script>
+</body>
+</html>

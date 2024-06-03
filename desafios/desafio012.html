@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Preço Mudou!</title>
+    <style>
+        input{
+            width: 140px;
+            height: 70px;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço Mudou!</h1>
+    <input type="button" value="Verificar" onclick="prec()">
+    <p id="p">Clique no botão a baixo para a mudança do preço!</p>
+    <script>
+        function prec() {
+            var pant = Number(window.prompt(`Qual era o preço anterior do produto?`))
+            var pnov = Number(window.prompt(`Qual é o preço atual do produto?`))
+            var p = window.document.getElementById('p')
+            var soma = pnov - pant
+            var porcent = (soma / pant) * 100
+            var pant = pant.toLocaleString ('pt-BR', {style:'currency', currency:'BRL'})
+            var pnov = pnov.toLocaleString('pt-BR',{style:'currency', currency:'BRL'})
+            var soma = soma.toLocaleString('pt-BR',{style:'currency', currency:'BRL'})
+            p.innerHTML = (`<p>O valor anterior era ${pant} e agora esta custando ${pnov}</p>`)
+            var porcent = porcent.toFixed(0)    
+            if (pnov > pant){ 
+                p.innerHTML += (`<p>Hoje o produto esta mais caro</p>
+                <p>O produto subiu ${soma} em relação ao preço anterior`)
+            }   else if (pnov == pant){
+                p.innerHTML += (`<p>O preço antigo ${pant} e o novo ${pnov} são iguais</p>
+                <p> Não houve alteração de preço </p>`)
+            }else{ 
+                p.innerHTML += (`<p>O produto esta mais barato!</p>
+                <p>O Preço reduziu ${soma} em relação ao preço anterior`)
+            }
+            p.innerHTML += (`Uma variavel de ${porcent}%`)
+        }
+    </script>
+</body>
+</html>
