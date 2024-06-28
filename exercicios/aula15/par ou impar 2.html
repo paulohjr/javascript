@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h1> Descobrindo se é Impar ou par </h1>
+    <section>
+        <div>
+            <form>
+                <input type="number" name="num" id="txtnum">
+                <input type="button" value="Validar" onclick="validar()">
+            </form>
+        </div>
+        <div id="res"></div>
+    </section>
+    
+</body>
+<script>
+    function validar(){
+
+    var num = window.document.getElementById('txtnum')
+    var n = Number(num.value)
+    var res = document.getElementById('res')
+    res.style.fontSize = '1.5em'
+    res.style.marginTop = '10px'
+    if (n % 2 == 0 ) {
+        res.innerHTML = (`O numero ${n} é par`)
+    } else {
+        res.innerHTML = (`O numero ${n} é impar`)
+    }
+}
+</script>
+</html>

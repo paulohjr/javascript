@@ -1,0 +1,27 @@
+@charset "UTF-8";
+body{
+    background-color: blue;
+    text-align: center;
+    color: white;
+}
+
+section{
+    margin: auto;
+    background-color: white;
+    width: 450px;
+    height: 350px;
+    color: black;
+    border-radius: 10px;
+}
+
+select#ilista{
+    width: 150px;
+}
+
+div{
+    padding: 15px;
+}
+
+select{
+    text-align: left;
+}

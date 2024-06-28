@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h1>
+        <div id="res"></div>
+    </h1>
+</body>
+<script>
+    var n1 = window.prompt(`Digite um numero?`)
+    var res = document.getElementById('res')
+
+    
+    if (n1 % 2 == 0 ) {
+        res.innerHTML = (`O numero ${n1} é par`)
+    } else {
+        res.innerHTML = (`O numero ${n1} é impar`)
+    }
+</script>
+</html>
